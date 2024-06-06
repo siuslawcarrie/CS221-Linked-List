@@ -11,7 +11,7 @@ public: //section is a template ***given code
 
 private:
     int value;//***
-    Node *next;//***
+    Node *next = NULL;//*** (added = NULL)
 
 };
 
@@ -29,9 +29,12 @@ int main() {
     // variable pointer to object in memory called root
     root = new Node(0); // ***root now points to a Node object, new keyword Node class
     //value 0 bc the constructor takes a value
+    // Step 2 code here - use a loop
+    int x = 0, node = 0;
+    Node* temp = new Node (x);//creates new node instance in memory and assigns it to Node pointer "temp"
 
-    // Step 2 code here
-
+    node = root; //keeps track of where you're at in the list
+    node ->setNext(temp); //hooks 2 together
     // Step 3 code here
 
     // Step 4 code here
