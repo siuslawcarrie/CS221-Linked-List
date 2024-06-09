@@ -18,33 +18,33 @@ public: //section is a template ***given code
     ~Node();
 
 private:
-    int value;//***private attribute for val/value
-    Node *next = nullptr;//***of the 2 parts to each node, the part that points to next node
+    int value;//***
+    Node *next = nullptr;//***
 
 };
 
-Node::Node(int val) { //constructor, setting value here instead of using setValue
-    value = val;//assign parameter val to local variable value
+Node::Node(int val) { //constructor
+    value = val;
 };
 
 Node::~Node() { //destructor
-    cout<<"Destructor is working."<<endl;
+    cout << "destructor is working" << endl;
 };
 
-void Node::setValue(int value) {//sets the value of an existing Node, changes the node
-    this->value = value;//assigns local variable value to class attribute value
+void Node::setValue(int value) {
+    this->value = value;
 }
 
-int Node::getValue() {//prototype for getter for value, gets the value -from existing Node
+int Node::getValue() {
     return value;
 }
 
-Node* Node::getNext() {//prototype for getter for pointer
+Node* Node::getNext() {
     return next;
 }
 
-void Node::setNext(Node *n) {//creates pointer in Node class
-    this->next = n;//Node pointer
+void Node::setNext(Node *n) {
+    this->next = n;
 }
 
 int main() {
@@ -54,20 +54,24 @@ int main() {
 
 
     root = new Node(0); // ***root now points to a Node object, new keyword Node class, BEFORE loop
-    //above line could use setValue
-    Node* end = root;//defines end
+    Node* end = root;
     //value 0 bc the constructor takes a value
 
     // Step 2 code here - use a loop
+    /*   Node *temp = new Node(2);//creates new node instance in memory and assigns it to Node pointer "temp"
+       while (end != NULL) {//loop for printing**Delete loop is the same - track current node & just finished (delete), 2 pointers, move both
+           node = root; //keeps track of where you're at in the list
+           node->setNext(temp); //hooks 2 together
+           node->getNext();
+           //pointer to keep track of where you were then delete that
+       }*/
     //***BEG OF LOOP8
     for (int i = 1; i < 10; i++) {
-        Node *temp = new Node(0);
-        temp->setValue(i*2);
-        end->setNext(temp);//connects end's next pointer to the location of temp in memory
-        end = temp; //changes the end pointer to point to where temp is pointing
+        Node *temp = new Node(i * 2);
+        end->setNext(temp);//connects root's pointer to value 2
+        end = temp; //declares end pointer
     }
-    cout<<endl;
-//    end = root;
+    end = root;
     //**END OF LOOP
 /*
     temp = new Node(4);//already declared with Node *temp
@@ -82,16 +86,19 @@ int main() {
     end->setNext(temp); //calling set Next method on what end is pointing to
     end = temp;//must move end each time through the list ***root never changes*/
 
-//   
+//    cout<<"root "<<root<<endl;
+//    cout<<"temp "<<temp<<endl;
+
+
+
     // Step 3 code here -- print list
-    end = root;
     while (end != nullptr){
 
         cout<<end->getValue()<<endl;
         end = end -> getNext();
 
     }
-//end = root;
+    end = root;
     // }
 
     // Step 4 code here -- delete each node
