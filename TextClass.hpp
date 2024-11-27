@@ -40,7 +40,7 @@ public:
         return this->prev;
     }
 
-    void setNext(TextLink *prev) {
+    void setNext(TextLink *next) {
         this->next = next;
     }
 
@@ -52,7 +52,7 @@ public:
 
 class TextClass { //linked list class - each one is an object
 private:
-
+bool isEmpty();
     TextLink *head = nullptr;//name of the link TextClass is the collection of links
     TextLink *tail = nullptr;
 
@@ -70,22 +70,22 @@ public:
     void addTail(int value); //adds value to the tail of the list.
 
 
-    int getHead();  // returns the value from the head of the list. (throws exception if list is empty)
+    char getHead();  // returns the value from the head of the list. (throws exception if list is empty)
 
 
-    int getTail();  //returns the value from the tail of the list. (throws exception if list is empty)
+    char getTail();  //returns the value from the tail of the list. (throws exception if list is empty)
 
 
-    int removeHead();  //removes the value at the head of the list.
+    void removeHead();  //removes the value at the head of the list.
 
 
-    int removeTail(); //removes the value at the tail of the list.
+    void removeTail(); //removes the value at the tail of the list.
 
 
-    int find(int value); //returns true if value is present in the list, returns false if not.
+    bool find(int value); //returns true if value is present in the list, returns false if not.
 
 
-    void findRemove(int value); // returns true and removes the value if present, returns false if not.
+    bool findRemove(int value); // returns true and removes the value if present, returns false if not.
 
 
     std::string displayList();  // returns a string containing the contents of the list from head to tail. Should
