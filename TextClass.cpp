@@ -5,21 +5,29 @@
 #include <iostream>
 
 void TextClass::addHead(char value) { //adds value to the head of the list.
+    std::cout << "mc beginning of addHead" << std::endl;
+    std::cout << "char: " <<value<< std::endl;
+    TextLink *temp = new TextLink(value);
     if (isEmpty()) {
-        TextLink *temp = new TextLink(value);
         head = temp;
         tail = temp;
     } else {
-        TextLink *temp = new TextLink(value, nullptr, head);//passing in head pointer
+        temp->setNext(head);
+        head->setPrev(temp);
+//        temp->setPrev(temp);
+//        head ->setPrev = temp;
+//        head = temp;
+      /*  TextLink *temp = new TextLink(value, nullptr, head);//passing in head pointer
         head->setNext(temp); //establishes link from current head to new head
-        head = temp;
+        head = temp;*/
     }
-    std::cout << "addHead" << std::endl;
+    std::cout << "mc end of addHead" << std::endl;
+    std::cout << "head: " <<head<< std::endl;
 }
-
 //***helper function for isempty
 void TextClass::addTail(int value) { //adds value to the tail of the list.
-    std::cout << "addTail" << std::endl;
+    std::cout << "mc beginning of addTail" << std::endl;
+    std::cout << "tail: " <<tail<< std::endl;
 //tail is akin to head in add Head and tail's link is previous not next
 
 // if the list is empty, initialize both head and tail
@@ -37,6 +45,8 @@ void TextClass::addTail(int value) { //adds value to the tail of the list.
         tail = temp;
 
     }
+    std::cout << "mc end of addTail" << std::endl;
+    std::cout << "tail: " <<tail<< std::endl;
 }
 //char TextClass::getHead() { // returns the value from the head of the list. (throws exception if list is empty)
 //return getValue(head);
@@ -116,4 +126,6 @@ int TextClass::findNext(int value) { //like find, but if findNext is called for 
     std::cout << "findNext" << std::endl;
     return 0;
 }
-
+//
+// Created by siusl on 11/28/2024.
+//

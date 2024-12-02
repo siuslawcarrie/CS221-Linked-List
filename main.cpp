@@ -5,6 +5,13 @@
 //  Created by jim bailey on 4/14/21
 //  with modifications by Tina Majchrzak
 //
+//
+//  main.cpp
+//  TextClass
+//
+//  Created by jim bailey on 4/14/21
+//  with modifications by Tina Majchrzak
+//
 
 #include "TextClass.hpp"
 #include <iostream>

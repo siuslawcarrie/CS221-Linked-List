@@ -1,6 +1,4 @@
-//
-// Created by siusl on 11/24/2024.
-//
+
 
 #ifndef TEXTCLASS_LINKEDLISTS_TEXTCLASS_HPP
 #define TEXTCLASS_LINKEDLISTS_TEXTCLASS_HPP
@@ -40,7 +38,7 @@ public:
         return this->prev;
     }
 
-    void setNext(TextLink *next) {
+    void setNext(TextLink *next) {//*next is an argument which sets the TextLink next to the passthrough argument
         this->next = next;
     }
 
@@ -52,7 +50,7 @@ public:
 
 class TextClass { //linked list class - each one is an object
 private:
-bool isEmpty();
+    bool isEmpty();
     TextLink *head = nullptr;//name of the link TextClass is the collection of links
     TextLink *tail = nullptr;
 
@@ -64,7 +62,7 @@ public:
 
     //base methods **PER LAB INSTRUCTIONS
     void addHead(char value); //adds value to the head of the list.
-        /*if empty, error message.  */
+    /*if empty, error message.  */
 
 
     void addTail(int value); //adds value to the tail of the list.
@@ -105,3 +103,4 @@ public:
 };
 
 #endif //TEXTCLASS_LINKEDLISTS_TEXTCLASS_HPP
+
