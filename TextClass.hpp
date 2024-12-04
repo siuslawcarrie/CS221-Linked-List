@@ -65,7 +65,7 @@ public:
     /*if empty, error message.  */
 
 
-    void addTail(int value); //adds value to the tail of the list.
+    void addTail(char value); //adds value to the tail of the list.
 
 
     char getHead();  // returns the value from the head of the list. (throws exception if list is empty)

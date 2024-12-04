@@ -18,7 +18,7 @@
 
 // basic tests
 #define TEST_HEAD
-//#define TEST_TAIL
+#define TEST_TAIL
 //#define TEST_QUEUE
 //#define TEST_DISPLAY
 //#define TEST_FIND
