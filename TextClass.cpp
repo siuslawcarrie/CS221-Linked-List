@@ -21,11 +21,11 @@ void TextClass::addHead(char value) { //adds value to the head of the list.
         head->setNext(temp); //establishes link from current head to new head*/
         head = temp;
     }
-//    std::cout << "mc end of addHead" << std::endl;
+//    std::cout << "mc end of addHead" << std::endl; //DEBUG
 }
 //***helper function for isempty
 void TextClass::addTail(char value) { //adds value to the tail of the list.
-//    std::cout << "mc beginning of addTail" << std::endl;
+//    std::cout << "mc beginning of addTail" << std::endl; //DEBUG
 //tail is akin to head in add Head and tail's link is previous not next
 
 // if the list is empty, initialize both head and tail
@@ -43,14 +43,14 @@ void TextClass::addTail(char value) { //adds value to the tail of the list.
         tail = temp;
 
     }
-//    std::cout << "mc end of addTail" << std::endl;
+//    std::cout << "mc end of addTail" << std::endl; //DEBUG
 }
 //char TextClass::getHead() { // returns the value from the head of the list. (throws exception if list is empty)
 //return getValue(head);
 
 
 char TextClass::getTail() { //returns the value from the tail of the list. (throws exception if list is empty)
-    std::cout << "getTail" << std::endl;
+//    std::cout << "getTail" << std::endl; //DEBUG
     if(isEmpty()){
         throw std::out_of_range("Empty list.");
     }
@@ -91,11 +91,22 @@ void TextClass::removeTail() { //removes the value at the tail of the list.
     if ((this->head == nullptr) && (this->tail == nullptr)) {
         throw std::out_of_range("Empty List");
     }
-    std::cout << "removeTail" << std::endl;
+    if (tail->getNext() != nullptr) {//access the tail link
+
+        TextLink *temp = tail->getNext();
+
+        temp->setPrev(nullptr);
+        delete tail;
+        tail = temp;
+    } else {
+        delete tail;
+        head = nullptr;
+        tail = nullptr;
+    }
 }
 
-bool TextClass::find(int value) { //returns true if value is present in the list, returns false if not.
-    std::cout << "find" << std::endl;
+    bool TextClass::find(int value) { //returns true if value is present in the list, returns false if not.
+    std::cout << "find" << std::endl;//DEBUG
     return 0;
 }
 
@@ -103,7 +114,7 @@ bool TextClass::findRemove(int value) { // returns true and removes the value if
     if ((this->head == nullptr) && (this->tail == nullptr)) {
         throw std::out_of_range("Empty List");
     }
-//    std::cout << "findRemove" << std::endl;
+//    std::cout << "findRemove" << std::endl; //DEBUG
 return false;
 }
 
