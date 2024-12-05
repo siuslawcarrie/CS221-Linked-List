@@ -110,16 +110,54 @@ void TextClass::removeTail() { //removes the value at the tail of the list.
     return 0;
 }
 
-bool TextClass::findRemove(int value) { // returns true and removes the value if present, returns false if not.
+bool TextClass::findRemove(int value)  {// returns true and removes the value if present, returns false if not.
     if ((this->head == nullptr) && (this->tail == nullptr)) {
         throw std::out_of_range("Empty List");
     }
+  TextLink* ptr = head;
+    // walk down the list, looking for the value
+    // start at the head
 //    std::cout << "findRemove" << std::endl; //DEBUG
-return false;
-}
+// continue until we run out of links
+    while (ptr != nullptr) {
+
+        // see if this link is what we want
+        if (ptr->getValue() == value) {//finding the value
+
+            // special case head use existing code
+            if (ptr == head) {
+                removeHead();
+            } else if (ptr == tail) {
+                removeTail();
+            }
+            else{ // typical link, set prev and next to point around it
+                ptr.getPrev().setNext(ptr.getNext());
+                ptr.getNext().setPrev(ptr.getPrev());
+
+                // delete the old link (C++ only)
+                delete ptr;
+                // and return
+                return true;
+                // not there, keep looking
+                else{
+                    ptr = ptr.getNext()
+                }
+
+                // done with li
+                return false;
+            }
+        }}
+        }
+
+    }
+
+
+    }
+
 
 std::string TextClass::displayList() { // returns a string containing the contents of the list from head to tail. Should
 //        insert a space between each value.
+
     return "displayList";
 
 }
