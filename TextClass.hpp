@@ -80,10 +80,10 @@ public:
     void removeTail(); //removes the value at the tail of the list.
 
 
-    bool find(int value); //returns true if value is present in the list, returns false if not.
+    bool find(char value); //returns true if value is present in the list, returns false if not.
 
 
-    bool findRemove(int value); // returns true and removes the value if present, returns false if not.
+    bool findRemove(char value); // returns true and removes the value if present, returns false if not.
 
 
     std::string displayList();  // returns a string containing the contents of the list from head to tail. Should
@@ -92,11 +92,11 @@ public:
 
     //***void append? int otherList? **GO TO text class Linked List
     void
-    append(int *otherList); //hooks lists together, pointer to linked list//appends the contents of otherList to the tail of this list. Note that
+    append(TextClass *otherList); //hooks lists together, pointer to linked list//appends the contents of otherList to the tail of this list. Note that
 //    otherList is an object, so should be passed by const reference (except for Python which does
 //    not know about references).
 
-    int findNext(int value);  //like find, but if findNext is called for the same value after a success, it
+    int findNext(char value);  //like find, but if findNext is called for the same value after a success, it
 //    should find the next instance of that value, wrapping if necessary.
 
 
